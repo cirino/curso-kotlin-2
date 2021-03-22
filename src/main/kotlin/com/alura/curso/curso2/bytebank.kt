@@ -1,61 +1,31 @@
 package com.alura.curso.curso2
 
 fun main() {
-	val cirino = Funcionario(
-		"Cirino",
-		"111,1,1,1",
-		1000.0
-	)
+//	testaHerancaPolimorfismo()
+//	testaCondicoes()
+//	testaCopiasEReferencias()
+//	testaLacos()
+//	testaComportamentosConta()
 
-	println("Funcionario: ${cirino.nome}")
-	println("Salario: ${cirino.salario}")
-	println("Bonificação: ${cirino.bonificacao + cirino.salario}")
-
-	val dagmar = Gerente(
-		"Dagmar",
-		"122.33.44.5",
-		2000.0,
+	val cirino = ContaCorrente(
+		"cirino",
 		1234
 	)
-
-	println("Gerente: ${dagmar.nome}")
-	println("Salario: ${dagmar.salario}")
-	println("Bonificação: ${dagmar.bonificacao}")
-	println(dagmar.autentica(1234))
-
-	val mi = Diretor(
-		"Mi",
-		"122.33.44.5",
-		4000.0,
-		200.0,
-		1234
+	val mi = ContaPoupanca(
+		"mi",
+		2222
 	)
 
-	println("Diretor: ${mi.nome}")
-	println("Salario: ${mi.salario}")
-	println("Bonificação: ${mi.bonificacao}")
-	println(mi.autentica(1234))
+	cirino.deposita(1000.0)
 
-	val lu = Analista(
-		"Luiza",
-		"122.33.44.5",
-		5000.0
-	)
+	cirino.saca(100.0)
+	println("saldo cirino ${cirino.saldo}")
+	println("saldo mi ${mi.saldo}")
 
-	println("Diretor: ${lu.nome}")
-	println("Salario: ${lu.salario}")
-	println("Bonificação: ${lu.bonificacao}")
+	cirino.transferencia(100.0, mi)
+	println("saldo cirino ${cirino.saldo}")
 
-	val calculadora = CalculadoraBonificacao()
-	calculadora.registra(cirino)
-	calculadora.registra(dagmar)
-	calculadora.registra(mi)
-	calculadora.registra(lu)
-
-	println(calculadora.total)
+	mi.transferencia(10.0, cirino)
+	println("saldo cirino ${cirino.saldo}")
+	println("saldo mi ${mi.saldo}")
 }
-
-
-
-
-

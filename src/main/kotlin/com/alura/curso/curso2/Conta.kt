@@ -1,6 +1,6 @@
 package com.alura.curso.curso2
 
-class Conta(
+open class Conta(
 	var titular: String,
 	val numero: Int
 ) {
@@ -18,7 +18,7 @@ class Conta(
 		}
 	}
 
-	fun saca(valor: Double) {
+	open fun saca(valor: Double) {
 		if (valor > 0 && this.saldo >= valor) {
 			this.saldo -= valor
 		} else {
