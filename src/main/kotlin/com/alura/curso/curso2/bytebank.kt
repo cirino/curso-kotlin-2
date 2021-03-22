@@ -36,12 +36,23 @@ fun main() {
 	println("Bonificação: ${mi.bonificacao}")
 	println(mi.autentica(1234))
 
-//	val calculadora = CalculadoraBonificacao()
-//	calculadora.registra(cirino)
-//	calculadora.registra(dagmar)
-//	calculadora.registra(mi)
-//
-//	println(calculadora.total)
+	val lu = Analista(
+		"Luiza",
+		"122.33.44.5",
+		5000.0
+	)
+
+	println("Diretor: ${lu.nome}")
+	println("Salario: ${lu.salario}")
+	println("Bonificação: ${lu.bonificacao}")
+
+	val calculadora = CalculadoraBonificacao()
+	calculadora.registra(cirino)
+	calculadora.registra(dagmar)
+	calculadora.registra(mi)
+	calculadora.registra(lu)
+
+	println(calculadora.total)
 }
 
 
