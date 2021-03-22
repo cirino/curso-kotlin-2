@@ -1,4 +1,4 @@
-package com.alura.curso.modulo1
+package com.alura.curso.curso2
 
 fun testaLacos() {
 	var i = 0

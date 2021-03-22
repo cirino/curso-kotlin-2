@@ -1,4 +1,4 @@
-package com.alura.curso.modulo1
+package com.alura.curso.curso2
 
 fun testaCondicoes(saldo: Double) {
 	if (saldo > 0.0) {
