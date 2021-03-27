@@ -6,7 +6,7 @@ plugins {
     id("io.micronaut.application") version "1.4.2"
 }
 
-version = "0.1"
+version = "0.2"
 group = "com.alura.curso"
 
 repositories {
@@ -33,12 +33,24 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.4.10"
-}
 
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.2'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.12.2'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-csv
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-csv', version: '2.12.2'
+
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.12.+"
+
+}
 
 application {
     mainClass.set("com.alura.curso.ApplicationKt")
 }
+
 java {
     sourceCompatibility = JavaVersion.toVersion("14")
 }
@@ -54,5 +66,4 @@ tasks {
             jvmTarget = "14"
         }
     }
-
 }

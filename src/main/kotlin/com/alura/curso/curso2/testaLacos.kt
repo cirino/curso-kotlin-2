@@ -14,7 +14,7 @@ fun testaLacos() {
 		i++
 	}
 
-	for (i in 5 downTo 1) {
+	(5 downTo 1).forEach { i ->
 		val titular: String = "Alex $i"
 		val numeroConta: Int = 1000 + i
 		val saldo = i + 10.0
