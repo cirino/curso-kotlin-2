@@ -1,4 +1,4 @@
-package projeto
+package com.alura.curso.projeto
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
@@ -36,14 +36,3 @@ fun main() {
 //    println(readValue)
 
 }
-
-//class ItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null) : StdDeserializer<Item?>(vc) {
-//    @Throws(IOException::class, JsonProcessingException::class)
-//    override fun deserialize(jp: JsonParser, ctxt: DeserializationContext?): Item {
-//        val node = jp.codec.readTree<JsonNode>(jp)
-//        val id = (node["id"] as IntNode).numberValue() as Int
-//        val itemName = node["itemName"].asText()
-//        val userId = (node["createdBy"] as IntNode).numberValue() as Int
-//        return Item(id, itemName, User(userId, null))
-//    }
-//}
