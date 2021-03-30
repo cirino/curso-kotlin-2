@@ -1,7 +1,7 @@
 package com.alura.curso.projeto
 
-import com.google.gson.Gson
 import com.alura.curso.projeto.domain.dto.TestModel
+import com.google.gson.Gson
 
 fun main() {
     var gson = Gson()

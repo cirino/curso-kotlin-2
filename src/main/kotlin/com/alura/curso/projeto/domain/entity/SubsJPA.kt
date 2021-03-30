@@ -1,17 +1,18 @@
-package com.alura.curso.projeto.domain.entities
+package com.alura.curso.projeto.domain.entity
 
+//import io.micronaut.core.annotation.Introspected
 import javax.persistence.*
 
+//@Introspected
 @Entity
 @Table(name = "subs")
-data class Subs(
-
+data class SubsJPA(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
-    val id: Int,
+    val id: Long?,
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     val username: String,
 
     @Column(nullable = false)
@@ -31,5 +32,8 @@ data class Subs(
 
     @Column(nullable = true)
     val founder: String?
-)
-
+) {
+    override fun toString(): String {
+        return "SubsJPA(id=$id, username='$username', date='$date', tier='$tier', tenure='$tenure', streak='$streak', subtype=$subtype, founder=$founder)"
+    }
+}
