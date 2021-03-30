@@ -1,9 +1,9 @@
-package com.alura.curso.projeto
+package com.casadodev.domain.services
 
 import com.google.gson.Gson
 import java.io.File
 
-class ProcessData() {
+class TestProcessData() {
     fun processLineByLine(csv: File, processor: (Map<String, String>) -> Unit) {
         val BOM = "\uFEFF"
         val header = csv.useLines { it.firstOrNull()?.replace(BOM, "")?.split(";") }
